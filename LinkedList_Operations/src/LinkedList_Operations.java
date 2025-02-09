@@ -15,11 +15,11 @@ public class LinkedList_Operations {
 
 	private static void update() {
 		List<Integer> linkedlist = new LinkedList<>(Arrays.asList(2, 4, 6, 8, 10, 12));
-//    int num = 1; // Start numbering from 1
-//    for (int i = 0; i < linkedlist.size(); i++) {
-//        linkedlist.set(i, num++);
-//    }
-//    System.out.println(linkedlist);
+/*    int num = 1; // Start numbering from 1
+    for (int i = 0; i < linkedlist.size(); i++) {
+         linkedlist.set(i, num++);
+     }
+*/    System.out.println(linkedlist);
 		ListIterator<Integer> listIterator = linkedlist.listIterator();
 		int num = 1; // Start numbering from 1
 		while (listIterator.hasNext()) {
