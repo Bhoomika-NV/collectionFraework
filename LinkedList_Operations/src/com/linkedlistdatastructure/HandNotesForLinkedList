@@ -1,0 +1,27 @@
+ Data-Structures:
+•	As wkt, linkedlist do not require continous memory.
+*   This is the advantage of linkedlist.
+•	Unlike array which stores data in one cell, linkedlist
+    along with data it stores the addrss of next node.
+•	starting part of the linkedlist is HEAD of the linkedlist.
+•	HEAD usually stores the first element and address of next elem.
+•	and similary last node stores only data and points to null.
+•	This makes list flexible length in its size.
+
+   Where it is used:
+   
+•	Stack and Queue implementation.
+•	In browser we use, i.e in the browser we keep open many tabs,
+    there will be two arrows forward and backward.
+•	Each node will have data and address to next node 
+•	So we cannot store both data and address in any of the datatypes that java provides.
+•	So this y we have to define self defined datatype.
+
+How do we convert An array into Linked list in java?
+
+•	Head will store the first element of the array. Let’s assume the next ptr
+     is pointing to nothing for time being.                                           
+•	Now for x we can assign the temp , move the mover to next node and move the
+    temp to the next node.
+*   
+ 
