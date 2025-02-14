@@ -20,7 +20,7 @@ public class LinkedListImplementation {
 			tmp = tmp.next;
 		}
 		System.out.println();
-		System.out.println(findlengthOfList(head) + " is the length of the linkedlist");
+		/*System.out.println(findlengthOfList(head) + " is the length of the linkedlist");
 		System.out.println("please enter the item to search");
 		int item = sc.nextInt();
 		if (isElementPresent(head, item) == 0) {
@@ -28,7 +28,26 @@ public class LinkedListImplementation {
 		} else {
 			System.out.println(item + " is found in the list");
 		}
+		
+		  Node delete=deletion(head); print(delete);
+		  System.out.println("head is removed"); Node tail=tailDeletion(head);
+		  print(tail);
+		 
+		System.out.println("tail is removed");*/
+		//Node kthHead=removekthElement(head ,2);
+	    //print(kthHead);
+		Node value=removekthValueElement(head ,2);
+		print(value);
+  	}
+
+
+	private static void print(Node delete) {
+      while(delete!=null) {
+    	  System.out.print(delete.data+" ");
+    	  delete= delete.next;
+      }
 	}
+
 
 	private static Node arrayIntoLinkedlist(int[] arr) {
 		Node head = new Node(arr[0]);
@@ -61,6 +80,58 @@ public class LinkedListImplementation {
 		}
 		return 0;
 	}
+	private static Node deletion(Node head) {
+		if(head==null) return head;
+		head=head.next;
+		return head;
+	}
+	private static Node tailDeletion(Node node) {
+		if(node==null || node.next==null) return null;
+		Node tmp = node;
+		while(tmp.next.next!=null) {
+			tmp = tmp.next;
+		}
+		tmp.next =null;
+		return node;
+	}
+	private static Node removekthElement(Node head ,int k) {
+		if(head==null) return head;
+         if(k==1) {
+         	 Node temp = head;
+         	 return head;
+          }
+         Node tmp = head;
+         Node prev= null;
+         int cnt =0;
+         while(tmp!=null) {
+        	 cnt++;
+        	 if(cnt==k) {
+        		 prev.next = prev.next.next;
+        		 break;
+        	 }
+        	 prev= tmp;
+        	 tmp=tmp.next;
+         }
+         return head;
+	}
+	private static Node removekthValueElement(Node head ,int value) {
+		if(head==null) return head;
+        if(head.data==1) {
+        	 Node temp = head;
+        	 return head;
+         }
+        Node tmp = head;
+        Node prev= null;
+        while(tmp!=null) {
+       	 if(tmp.data==value) {
+       		 prev.next = prev.next.next;
+       		 break;
+       	 }
+       	 prev= tmp;
+       	 tmp=tmp.next;
+        }
+        return head;
+	}
 }
 
 class Node {
@@ -71,7 +142,6 @@ class Node {
 		this.data = data;
 		this.next = next;
 	}
-
 	public Node(int data1) {
 		this.data = data1;
 		this.next = null;
